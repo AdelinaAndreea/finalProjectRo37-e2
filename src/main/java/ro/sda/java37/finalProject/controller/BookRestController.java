@@ -2,8 +2,10 @@ package ro.sda.java37.finalProject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ro.sda.javaremote37.springseed.dto.BookDto;
-import ro.sda.javaremote37.springseed.services.BookService;
+import ro.sda.java37.finalProject.dto.BookDto;
+import ro.sda.java37.finalProject.services.BookService;
+//import ro.sda.javaremote37.springseed.dto.BookDto;
+//import ro.sda.javaremote37.springseed.services.BookService;
 
 import java.util.List;
 

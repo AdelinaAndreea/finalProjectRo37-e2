@@ -1,8 +1,10 @@
 package ro.sda.java37.finalProject.services;
 
 import org.springframework.stereotype.Service;
-import ro.sda.javaremote37.springseed.dto.BookDto;
-import ro.sda.javaremote37.springseed.entities.Book;
+import ro.sda.java37.finalProject.dto.BookDto;
+import ro.sda.java37.finalProject.entities.Book;
+//import ro.sda.javaremote37.springseed.dto.BookDto;
+//import ro.sda.javaremote37.springseed.entities.Book;
 
 @Service
 public class BookMapper implements Mapper<Book, BookDto> {

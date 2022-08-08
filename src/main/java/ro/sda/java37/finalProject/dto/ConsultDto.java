@@ -11,7 +11,10 @@ public class ConsultDto {
     private LocalDate date;
     private String description;
     private VeterinarianDto veterinarian;
+    private Long veterinarianId;
     private PetDto pet;
-    private double price;
+    private Long petId;
+
+    private Double price;
 
 }

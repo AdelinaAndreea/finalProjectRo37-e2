@@ -1,12 +1,14 @@
 package ro.sda.java37.finalProject.entities;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Consult {
 
     @Id
@@ -21,6 +23,6 @@ public class Consult {
     @ManyToOne
     @JoinColumn(name = "pet_id")
     private Pet pet;
-    private Float price;
+    private Double price;
 
 }

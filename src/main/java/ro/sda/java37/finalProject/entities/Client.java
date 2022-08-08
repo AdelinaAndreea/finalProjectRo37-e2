@@ -1,6 +1,7 @@
 package ro.sda.java37.finalProject.entities;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Client {
     @Id
     @GeneratedValue

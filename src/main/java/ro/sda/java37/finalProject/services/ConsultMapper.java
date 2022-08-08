@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.ConsultDto;
 import ro.sda.java37.finalProject.entities.Consult;
+import ro.sda.java37.finalProject.entities.Veterinarian;
 import ro.sda.java37.finalProject.repository.ConsultRepository;
 import ro.sda.java37.finalProject.repository.PetRepository;
+import ro.sda.java37.finalProject.repository.VeterinarianRepository;
 
 @Service
 
@@ -14,8 +16,6 @@ public class ConsultMapper implements Mapper<Consult, ConsultDto> {
     @Autowired
     private ConsultRepository consultRepository;
 
-    @Autowired
-    private ConsultMapper consultMapper;
 
     @Autowired
     private PetMapper petMapper;
@@ -26,6 +26,9 @@ public class ConsultMapper implements Mapper<Consult, ConsultDto> {
     @Autowired
     private VeterinarianMapper veterinarianMapper;
 
+    @Autowired
+    private VeterinarianRepository veterinarianRepository;
+
     @Override
     public ConsultDto convertToDto(Consult consult) {
         ConsultDto consultDto = new ConsultDto();
@@ -34,12 +37,12 @@ public class ConsultMapper implements Mapper<Consult, ConsultDto> {
         consultDto.setDescription(consult.getDescription());
         consultDto.setPrice(consult.getPrice());
         if (consult.getPet() != null) {
-            consultDto.setPet(petMapper.convertToDto(consult.getPet()));
-            consultDto.setId(consult.getPet().getId());
+            // consultDto.setPet(petMapper.convertToDto(consult.getPet()));
+            consultDto.setPetId(consult.getPet().getId());
         }
         if (consult.getVeterinarian() != null) {
-            consultDto.setVeterinarian(veterinarianMapper.convertToDto(consult.getVeterinarian()));
-            consultDto.setId(consult.getVeterinarian().getId());
+            //   consultDto.setVeterinarian(veterinarianMapper.convertToDto(consult.getVeterinarian()));
+            consultDto.setVeterinarianId(consult.getVeterinarian().getId());
         }
 
 
@@ -48,7 +51,21 @@ public class ConsultMapper implements Mapper<Consult, ConsultDto> {
     }
 
     @Override
-    public Consult convertToEntity(ConsultDto dto) {
-        return null;
+    public Consult convertToEntity(ConsultDto consultDto) {
+        Consult consult = new Consult();
+        consult.setId(consultDto.getId());
+        consult.setDate(consultDto.getDate());
+        consult.setDescription(consult.getDescription());
+
+        if (consultDto.getVeterinarianId() != null) {
+            Veterinarian veterinarian = veterinarianRepository.getById(consultDto.getVeterinarianId());
+            consult.setVeterinarian(veterinarian);
+        }
+
+        if (consultDto.getPetId() != null) {
+            consult.setPet(petRepository.getById(consultDto.getPetId()));
+        }
+        return consult;
+
     }
 }

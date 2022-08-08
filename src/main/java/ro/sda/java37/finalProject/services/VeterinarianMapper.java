@@ -1,11 +1,12 @@
 package ro.sda.java37.finalProject.services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.VeterinarianDto;
 import ro.sda.java37.finalProject.entities.Veterinarian;
 
 @Service
-
+@AllArgsConstructor
 public class VeterinarianMapper implements Mapper<Veterinarian, VeterinarianDto> {
 
     @Override

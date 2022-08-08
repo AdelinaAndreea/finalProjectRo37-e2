@@ -1,6 +1,5 @@
 package ro.sda.java37.finalProject.services;
 
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.ConsultDto;
@@ -9,7 +8,7 @@ import ro.sda.java37.finalProject.repository.ConsultRepository;
 import ro.sda.java37.finalProject.repository.PetRepository;
 
 @Service
-@AllArgsConstructor
+
 public class ConsultMapper implements Mapper<Consult, ConsultDto> {
 
     @Autowired

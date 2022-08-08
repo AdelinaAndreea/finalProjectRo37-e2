@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Data
@@ -15,7 +14,7 @@ public class Consult {
     private Long id;
     private LocalDate date;
     private String description;
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "vet_id")
     private Veterinarian veterinarian;
 

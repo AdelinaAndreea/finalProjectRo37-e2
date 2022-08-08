@@ -5,6 +5,7 @@ import ro.sda.java37.finalProject.dto.ClientDto;
 import ro.sda.java37.finalProject.entities.Client;
 
 @Service
+
 public class ClientMapper implements Mapper<Client, ClientDto> {
 
     @Override

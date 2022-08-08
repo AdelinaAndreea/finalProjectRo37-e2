@@ -34,7 +34,7 @@ public class ConsultMapper implements Mapper <Consult, ConsultDto>{
             consultDto.setPet(petMapper.convertToDto(consult.getPet()));
             consultDto.setId(consult.getPet().getId());
         }
-
+return consultDto;
 
     }
 

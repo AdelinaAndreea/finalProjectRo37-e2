@@ -15,7 +15,7 @@ public class ConsultDto {
         private LocalDate date;
         private String description;
         private Veterinarian veterinarian;
-        private Pet pet;
-        private Float price;
+        private PetDto pet;
+        private double price;
 
 }

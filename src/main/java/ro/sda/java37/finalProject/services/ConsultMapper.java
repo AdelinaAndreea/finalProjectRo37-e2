@@ -37,11 +37,11 @@ public class ConsultMapper implements Mapper<Consult, ConsultDto> {
         consultDto.setDescription(consult.getDescription());
         consultDto.setPrice(consult.getPrice());
         if (consult.getPet() != null) {
-            // consultDto.setPet(petMapper.convertToDto(consult.getPet()));
+            consultDto.setPet(petMapper.convertToDto(consult.getPet()));
             consultDto.setPetId(consult.getPet().getId());
         }
         if (consult.getVeterinarian() != null) {
-            //   consultDto.setVeterinarian(veterinarianMapper.convertToDto(consult.getVeterinarian()));
+            consultDto.setVeterinarian(veterinarianMapper.convertToDto(consult.getVeterinarian()));
             consultDto.setVeterinarianId(consult.getVeterinarian().getId());
         }
 

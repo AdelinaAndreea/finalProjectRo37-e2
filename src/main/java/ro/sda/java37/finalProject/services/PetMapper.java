@@ -28,7 +28,7 @@ public class PetMapper implements Mapper<Pet, PetDto> {
             petDto.setOwnerId(pet.getOwner().getId());
         }
 
-        petDto.setConsults(pet.getConsults());
+
         return petDto;
     }
 
@@ -46,7 +46,7 @@ public class PetMapper implements Mapper<Pet, PetDto> {
             pet.setOwner(client);
         }
 
-        pet.setConsults(petDto.getConsults());
+     
         return pet;
     }
 }

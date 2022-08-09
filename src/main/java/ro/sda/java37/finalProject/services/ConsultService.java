@@ -30,4 +30,14 @@ public class ConsultService {
         return result;
 
     }
+
+    public List<ConsultDto> getAllConsultsByPetId(Long petId) {
+        List<Consult> consults = consultRepository.findAllByPetId(petId);
+        return consults.stream().map(consult -> consultMapper.convertToDto(consult)).collect(Collectors.toList());
+    }
+
+    public List<ConsultDto> getAllConsultsByVeterinarianId(Long vetId) {
+        List<Consult> consults = consultRepository.findAllByVeterinarianId(vetId);
+        return consults.stream().map(consult -> consultMapper.convertToDto(consult)).collect(Collectors.toList());
+    }
 }

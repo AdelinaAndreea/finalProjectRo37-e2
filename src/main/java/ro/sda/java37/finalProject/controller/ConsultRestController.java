@@ -18,6 +18,17 @@ public class ConsultRestController {
         return consultService.getAllConsults();
     }
 
+    @GetMapping("/pet/{petId}")
+    public List<ConsultDto> getAllConsultsByPetId(@PathVariable Long petId) {
+        return consultService.getAllConsultsByPetId(petId);
+    }
+
+    @GetMapping("/veterinarian/{vetId}")
+    public List<ConsultDto> getAllConsultsByVeterinarianId(@PathVariable Long vetId) {
+        return consultService.getAllConsultsByVeterinarianId(vetId);
+    }
+
+
     @PostMapping
     public ConsultDto createConsult(@RequestBody ConsultDto consultDto) {
         return consultService.createConsult(consultDto);

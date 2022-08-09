@@ -23,4 +23,9 @@ public class PetRestController {
         return petService.createPet(petDto);
     }
 
+    @DeleteMapping("{id}")
+    public void deletePet(@PathVariable Long id) {
+        petService.deletePet(id);
+    }
+
 }

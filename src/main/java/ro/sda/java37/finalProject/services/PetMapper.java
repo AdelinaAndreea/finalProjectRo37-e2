@@ -44,9 +44,10 @@ public class PetMapper implements Mapper<Pet, PetDto> {
         if (petDto.getOwnerId() != null) {
             Client client = clientRepository.getById(petDto.getOwnerId());
             pet.setOwner(client);
+            
         }
 
-     
+
         return pet;
     }
 }

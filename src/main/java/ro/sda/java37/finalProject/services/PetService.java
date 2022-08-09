@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.PetDto;
+import ro.sda.java37.finalProject.entities.Client;
 import ro.sda.java37.finalProject.entities.Pet;
+import ro.sda.java37.finalProject.exceptions.EntityNotFoundError;
 import ro.sda.java37.finalProject.repository.PetRepository;
 
 import java.util.List;
@@ -28,5 +30,12 @@ public class PetService {
         pet = petRepository.save(pet);
         PetDto result = petMapper.convertToDto(pet);
         return result;
+    }
+
+    public void deletePet(Long id) {
+        Pet pet = petRepository.findById(id).orElseThrow(() -> new EntityNotFoundError("Pet not found"));
+        Client client = pet.getOwner();
+        client.removePet(pet);
+        petRepository.delete(pet);
     }
 }

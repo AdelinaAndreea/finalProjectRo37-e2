@@ -22,7 +22,7 @@ public class Pet {
     @JoinColumn(name = "owner_id")
     private Client owner;
 
-    @OneToMany(mappedBy = "pet")
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private List<Consult> consults;
 
 }

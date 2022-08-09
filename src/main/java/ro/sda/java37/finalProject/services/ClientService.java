@@ -25,7 +25,7 @@ public class ClientService {
             Client client = clientOptional.get();
             return clientMapper.convertToDto(client);
         } else {
-            throw new EntityNotFoundError("Client with id ");
+            throw new EntityNotFoundError("Client with id " + id + " not found");
         }
     }
 

@@ -14,6 +14,7 @@ public class Consult {
     @Id
     @GeneratedValue
     private Long id;
+
     private LocalDate date;
     private String description;
     @ManyToOne()

@@ -33,4 +33,8 @@ public class ConsultRestController {
     public ConsultDto createConsult(@RequestBody ConsultDto consultDto) {
         return consultService.createConsult(consultDto);
     }
+
+    public ConsultDto updateConsult(ConsultDto consultDto){
+      return consultService.updateConsult(consultDto);
+    }
 }

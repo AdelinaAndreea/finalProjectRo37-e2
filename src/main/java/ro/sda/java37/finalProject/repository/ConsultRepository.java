@@ -10,4 +10,6 @@ public interface ConsultRepository extends JpaRepository<Consult, Long> {
     List<Consult> findAllByPetId(Long petId);
 
     List<Consult> findAllByVeterinarianId(Long vetId);
+
+
 }

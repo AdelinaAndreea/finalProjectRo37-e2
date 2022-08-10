@@ -26,4 +26,5 @@ public class Consult {
     private Pet pet;
     private Double price;
 
+
 }

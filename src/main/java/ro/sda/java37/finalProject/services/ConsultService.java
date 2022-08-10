@@ -52,16 +52,13 @@ public class ConsultService {
       Consult consultEntity = consultRepository.findById(consultDto.getId()).orElseThrow(()-> new EntityNotFoundError("Entity not found"));
       if (consultDto.getVeterinarianId() != null) {
         Veterinarian veterinarian = veterinarianRepository.getById(consultDto.getVeterinarianId());
-
         consultEntity.setVeterinarian(veterinarian);
-
       }
       if (consultDto.getPetId() != null) {
         Pet pet = petRepository.getById(consultDto.getPetId());
         pet.getConsults().add(consultEntity);
         consultEntity.setPet(pet);
       }
-
       consultEntity.setDate(consultDto.getDate());
       consultEntity.setDescription(consultDto.getDescription());
       consultEntity.setPrice(consultDto.getPrice());

@@ -11,7 +11,7 @@ import { PetListComponent } from './pet-list/pet-list.component';
 
 
 const routes: Routes = [
-
+{path:'pets',component:PetListComponent}
 ];
 
 

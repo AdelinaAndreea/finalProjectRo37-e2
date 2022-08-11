@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import { Pet } from '../model/pet';
+import { PetServiceService } from '../service/pet-service.service';
+
 
 @Component({
   selector: 'app-pet-list',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetListComponent implements OnInit {
 
-  constructor() { }
+ pets !: Pet[];
 
-  ngOnInit(): void {
+
+  constructor(private petService : PetServiceService) { }
+
+  ngOnInit(){
+    this.petService.findAll().subscribe( data=> {
+      this.pets = data;
+    });
   }
 
 }

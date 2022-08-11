@@ -25,6 +25,9 @@ ngOnInit(): void {
     this.id=this.route.snapshot.params["petId"];
     
     }
+    reatPetByName(){
+        // this.name=this.route.snapshot.params["petName"];
+    }
 }
 
 

@@ -4,6 +4,6 @@ export class Pet {
     race?: string;
     dateOfBirth?: Date;
     kilos?:number;
-
+    isVaccinated?:boolean;
  ownerId?:number;
 }

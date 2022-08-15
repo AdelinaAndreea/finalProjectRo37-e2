@@ -14,11 +14,10 @@ public class Consult {
     @Id
     @GeneratedValue
     private Long id;
-
     private LocalDate date;
     private String description;
     @ManyToOne()
-    @JoinColumn(name = "vet_id")
+    @JoinColumn(name = "veterinarian_id")
     private Veterinarian veterinarian;
 
     @ManyToOne

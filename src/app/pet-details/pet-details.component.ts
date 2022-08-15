@@ -8,14 +8,13 @@ import { Pet }  from '../model/pet';
     templateUrl: './pet-details.component.html',
     styleUrls: ['./pet-details.component.css']
 })
-
 export class PetDetailsComponent implements OnInit{
     id!: number;
     pet!: Pet;
 
-    constructor(private petService:PetServiceService, private route: ActivatedRoute ){ }
+    constructor(private petService:PetServiceService, private route: ActivatedRoute ){ 
 
-
+    }
 
 ngOnInit(): void {
     this.readPetById();

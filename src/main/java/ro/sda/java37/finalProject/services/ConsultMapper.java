@@ -13,7 +13,6 @@ import ro.sda.java37.finalProject.repository.VeterinarianRepository;
 
 public class ConsultMapper implements Mapper<Consult, ConsultDto> {
 
-    @Autowired
     private ConsultRepository consultRepository;
 
 
@@ -53,6 +52,9 @@ public class ConsultMapper implements Mapper<Consult, ConsultDto> {
     @Override
     public Consult convertToEntity(ConsultDto consultDto) {
         Consult consult = new Consult();
+        if (consultDto.getId() !=null){
+          consult = consultRepository.findById(consultDto.getId()).orElse(consult);
+        }
         consult.setId(consultDto.getId());
         consult.setDate(consultDto.getDate());
         consult.setDescription(consult.getDescription());

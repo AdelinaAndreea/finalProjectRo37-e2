@@ -13,7 +13,7 @@ import ro.sda.java37.finalProject.repository.PetRepository;
 import ro.sda.java37.finalProject.repository.VeterinarianRepository;
 
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service

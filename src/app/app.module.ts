@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { PetListComponent } from './pet-list/pet-list.component';
+import { VeterinarianDetalilsComponent } from './veterinarian-details/veterinarian-details.component';
+import { VeterinarianListComponent } from './veterinarian-list/veterinarian-list.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PetListComponent
+    PetListComponent,
+    VeterinarianDetalilsComponent,
+    VeterinarianListComponent
   ],
   imports: [
     BrowserModule,

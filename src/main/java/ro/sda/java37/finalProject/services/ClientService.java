@@ -13,45 +13,42 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class ClientService {
-    @Autowired
-    private ClientRepository clientRepository;
-    @Autowired
-    private ClientMapper clientMapper;
+  @Autowired
+  private ClientRepository clientRepository;
+  @Autowired
+  private ClientMapper clientMapper;
 
 
-    public ClientDto getClientById(Long id) {
-        Optional<Client> clientOptional = clientRepository.findById(id);
-        if (clientOptional.isPresent()) {
-            Client client = clientOptional.get();
-            return clientMapper.convertToDto(client);
-        } else {
-            throw new EntityNotFoundError("Client with id " + id + " not found");
-        }
+  public ClientDto getClientById(Long id) {
+    Optional<Client> clientOptional = clientRepository.findById(id);
+    if (clientOptional.isPresent()) {
+      Client client = clientOptional.get();
+      return clientMapper.convertToDto(client);
+    } else {
+      throw new EntityNotFoundError("Client with id " + id + " not found");
     }
+  }
 
-    public ClientDto createClient(ClientDto clientDto) {
-        Client client = clientMapper.convertToEntity(clientDto);
-        client = clientRepository.save(client);
-        ClientDto result = clientMapper.convertToDto(client);
-        return result;
-    }
+  public ClientDto createClient(ClientDto clientDto) {
+    Client client = clientMapper.convertToEntity(clientDto);
+    client = clientRepository.save(client);
+    ClientDto result = clientMapper.convertToDto(client);
+    return result;
+  }
 
-    public ClientDto updateClient(ClientDto clientDto) {
-        Optional<Client> clientOptional = clientRepository.findById(clientDto.getId());
-        if (clientOptional.isPresent()) {
-            Client client = clientOptional.get();
-            client.setFirstName(clientDto.getFirstName());
-            client.setLastName(clientDto.getLastName());
-            client.setEmail(clientDto.getEmail());
-            client.setPhoneNumber(clientDto.getPhoneNumber());
-            clientRepository.save(client);
-            return clientMapper.convertToDto(client);
-        } else {
-            throw new EntityNotFoundError("Client with id " + clientDto.getId() + " not found");
-        }
-    }
+  public ClientDto updateClient(ClientDto clientDto) {
+    Client clientEntity = clientRepository.findById(clientDto.getId()).orElseThrow(() -> new EntityNotFoundError("Entity not found"));
+    clientEntity.setFirstName(clientDto.getFirstName());
+    clientEntity.setLastName(clientDto.getLastName());
+    clientEntity.setEmail(clientEntity.getEmail());
+    clientEntity.setPhoneNumber(clientDto.getPhoneNumber());
+    clientRepository.save(clientEntity);
+    return clientMapper.convertToDto(clientEntity);
 
-    public void deleteClient(Long id) {
-        clientRepository.deleteById(id);
-    }
+//
+  }
+
+  public void deleteClient(Long id) {
+    clientRepository.deleteById(id);
+  }
 }

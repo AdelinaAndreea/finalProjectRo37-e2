@@ -10,22 +10,27 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/pet", produces = "application/json")
 public class PetRestController {
-    @Autowired
-    private PetService petService;
+  @Autowired
+  private PetService petService;
 
-    @GetMapping()
-    public List<PetDto> getAllPets() {
-        return petService.getAllPets();
-    }
+  @GetMapping()
+  public List<PetDto> getAllPets() {
+    return petService.getAllPets();
+  }
 
-    @PostMapping
-    public PetDto createPet(@RequestBody PetDto petDto) {
-        return petService.createPet(petDto);
-    }
+  @PostMapping
+  public PetDto createPet(@RequestBody PetDto petDto) {
+    return petService.createPet(petDto);
+  }
 
-    @DeleteMapping("{id}")
-    public void deletePet(@PathVariable Long id) {
-        petService.deletePet(id);
-    }
+  @PutMapping()
+  public PetDto updatePet(@RequestBody PetDto petDto) {
+    return petService.updatePet(petDto);
+  }
+
+  @DeleteMapping("/{id}")
+  public void deletePet(@PathVariable Long id) {
+    petService.deletePet(id);
+  }
 
 }

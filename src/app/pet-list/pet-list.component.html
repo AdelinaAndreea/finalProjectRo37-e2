@@ -3,18 +3,29 @@
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Race</th>
+            <th scope="col">Owner</th>
+    
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let pet of pets">
-            <td>{{ pet.id }}</td>
             <td>{{ pet.name }}</td>
-            <td>{{pet.race}}</td>
+    
+        
+            <td>{{pet.owner?.firstName}}</td>
+            <td>
+          
+          
+            
+                <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button>
+                <button type="button" class="btn btn-danger" (click)="viewDetails(pet)">Details</button>
+            </td>
+            
           </tr>
         </tbody>
       </table>
+      <button type="button" class="btn btn-danger" (click)="addPet()">Add</button>
     </div>
+    
   </div>

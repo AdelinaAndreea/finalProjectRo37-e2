@@ -1,0 +1,29 @@
+<div class="container"> 
+    <h2>Veterinarian details</h2>
+    <table class="table table-bordered tavel-striped table-hover">
+        <thead>
+            <tr>
+                <td>Id<td>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Speciality</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{veterinarian.id}}</td>
+                <td>{{veterinarian.firstName}}</td>
+                <td>{{veterinarian.lastName}}</td>
+                <td>{{veterinarian.speciality}}</td>
+            <td>
+                <!-- <a class="btn btn-info" [routerLink]="['/veterinarian, veterinarian.id']">Details</a>
+                <a class="btn btn-success" href="#">Edit</a> -->
+                <!-- <button type="button" class="btn btn-danger"  (click)="deleteVeterinarian(veterinarian.id)">Delete</button> -->
+            </td>
+            </tr>
+    
+        </tbody>
+    
+        </table>
+        
+    </div>

@@ -1,26 +1,99 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/pets" class="btn btn-info">List Users</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/adduser" class="btn btn-info">Add User</a>
-            </li>
-            <ul class="nav nav-pills">
-              <li><a routerLinkActive="active" routerLink="/home">Home</a></li>
-              <li><a routerLinkActive="active" routerLink="/login">Login</a></li>
-              <li><a routerLinkActive="active" routerLink="/logout">Logout</a></li>
-            </ul>
+
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <img src="../assets/catel2.jpg" alt="logo" style="width: 50px"/>
+    <a class="navbar-brand" routerLink="/home">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link list-inline-item" routerLink="/veterinrian">Veterinarian</a>
+        </li>
+          
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/Pet" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Pet
+        </a>
+        
+          <!-- <ul class="dropdown-menu" aria-labelledby ="navbarDropdown">   
+          <li class="dropdown-item">    
+           <a routerLink="/pets" >List Pet</a>
+          </li>
+         <li class="dropdown-item">
+           <a routerLink="/addpets" class="btn btn-info">Add Pet</a>
+         </li>
+         <li><hr class="dropdown-divider"></li>
+        </ul> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a> </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/logout">Logout</a></li>
+        
+          <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="pet">List Pet</a></li>
+            <li><a class="dropdown-item" href="Consult/">List Consult</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> -->
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+  <div id="header-container" class="global header-container" role="banner">
+    <div class="">
+
+      <ul class="text-center list-inline py-3"> 
+        <li class="list-inline-item">
+          <a routerLink="/pets" class="btn btn-info">List Pet</a>
+        </li>
+        <li class="list-inline-item">
+          <a routerLink="/adduser" class="btn btn-info">Add Pet</a>
+        </li>
+
+        <li class="list-inline-item">
+          <a routerLink="/Veterinarian" class="btn btn-info">List Veterinarian</a>
+        </li>
+        <li class="list-inline-item">
+          <a routerLink="/adduser" class="btn btn-info">Add Veterinarian</a>
+          <li class="list-inline-item">
+            <a routerLink="/consults" class="btn btn-info">List Consult</a>
+          </li>
+          <li class="list-inline-item">
+            <a routerLink="/adduser" class="btn btn-info">Add Consult</a>
+        </li>
+        <ul class="nav nav-pills">
+          <!-- //<li><a routerLinkActive="active" routerLink="/home">Home</a></li>// -->
+        </ul>
+      </ul>
+
+      <div class="card brand">    
+           <img src="..\assets\Home-page.jpg" class="card-img-center">
+           <h1 class="card-title text-center text-white py-3">{{ title }}</h1>
+           <div class="card-body">
+           <ul class="text-center list-inline py-3">
           </ul>
         </div>
       </div>
       <router-outlet></router-outlet>
-    </div>
-  </div>
+      </div>
+      </div>
 </div>
-

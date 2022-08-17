@@ -29,6 +29,7 @@ export class PetListComponent implements OnInit {
   }
 
   deletePet(id:any){
+    console.log("deletePetById");
     this.petService.deletePetById(id).subscribe(data =>{
       this.ngOnInit();
       console.log("Pet with id "+id+" has been removed");

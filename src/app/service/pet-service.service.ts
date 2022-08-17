@@ -17,7 +17,7 @@ export class PetServiceService {
    }
    
    public deletePetById(id:any){
-    return this.http.delete<Pet>(this.petUrl+id);
+    return this.http.delete<Pet>(this.petUrl+"/"+id);
   }
   public updatePetById( pet:Pet){
     console.log("this.updatePetById")

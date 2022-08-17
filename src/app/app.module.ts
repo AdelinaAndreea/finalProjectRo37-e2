@@ -17,6 +17,7 @@ import { ClientListComponent } from './client-list/client-list.component';
 const routes: Routes = [
 {path:'pets',component:PetListComponent},
 {path:'pets/details',component:PetDetailsComponent},
+{path:'client',component:ClientListComponent}
 ];
 
 

@@ -13,6 +13,8 @@ import { PetServiceService } from '../service/pet-service.service';
 export class PetListComponent implements OnInit {
 
  pets !: Pet[];
+ public isVisible:boolean=false;
+
 
 
 
@@ -40,10 +42,12 @@ export class PetListComponent implements OnInit {
   // }
 
   addPet(){
-    
+
 
   }
-
+// onAdd(){
+//   this.isVisible=true;
+// }
 
   viewDetails(pet: Pet) {
     

@@ -9,11 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { PetDetailsComponent } from './pet-details/pet-details.component';
+import { PetCreateComponent } from './pet-create/pet-create.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
+import { ClientListComponent } from './client-list/client-list.component';
 
 
 const routes: Routes = [
 {path:'pets',component:PetListComponent},
-{path:'pets/details',component:PetDetailsComponent}
+{path:'pets/details',component:PetDetailsComponent},
 ];
 
 
@@ -21,7 +24,10 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PetListComponent,
-    PetDetailsComponent
+    PetDetailsComponent,
+    PetCreateComponent,
+    ClientDetailsComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,

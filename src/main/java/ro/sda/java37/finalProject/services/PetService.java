@@ -49,6 +49,7 @@ public class PetService {
     petEntity.setRace(petDto.getRace());
     petEntity.setDateOfBirth(petDto.getDateOfBirth());
     petEntity.setIsVaccinated(petDto.getIsVaccinated());
+    petEntity.setKilos(petDto.getKilos());
     if (petDto.getOwnerId() != null) {
       Client client = clientRepository.getById(petDto.getOwnerId());
       petEntity.setOwner(client);

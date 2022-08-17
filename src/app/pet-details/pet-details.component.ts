@@ -20,6 +20,7 @@ export class PetDetailsComponent implements OnInit{
         //console.log(this.router.getCurrentNavigation()?.extras.state?.'petJson');
         // this.router.getCurrentNavigation()?.extras.state.petJson;
         this.pet=this.router.getCurrentNavigation()?.extras.state?.['petJson'];
+        this.router
     const currentNavigation = this.router.getCurrentNavigation();
      }
 
@@ -59,11 +60,23 @@ ngOnInit(): void {
 
        updatePet(){
         this.isVisible=false;
-        this.pet.name=this.myGroup.get('formPetName')?.value;
-        this.pet.race=this.myGroup.get('formRace')?.value;
-        this.pet.dateOfBirth=this.myGroup.get('formDateOfBirth')?.value;
-        this.pet.kilos=this.myGroup.get('formKilos')?.value;
-        this.pet.isVaccinated=this.myGroup.get('formVaccinated')?.value;
+
+        let petTemp : Pet = new Pet();
+        petTemp.id=this.pet.id;
+        petTemp.name=this.myGroup.get('formPetName')?.value;
+        petTemp.race=this.myGroup.get('formRace')?.value;
+        petTemp.dateOfBirth=this.myGroup.get('formDateOfBirth')?.value;
+        petTemp.kilos=this.myGroup.get('formKilos')?.value;
+        petTemp.isVaccinated=this.myGroup.get('formVaccinated')?.value;
+        
+        this.petService.updatePetById(petTemp).subscribe(petDto =>{
+            this.pet.name=petDto.name;
+            this.pet.race=petDto.race;
+            this.pet.dateOfBirth=petDto.dateOfBirth;
+            this.pet.kilos=petDto.kilos;
+            this.pet.isVaccinated=petDto.isVaccinated;
+        });
+        
        }
 }
 

@@ -25,6 +25,7 @@ public class PetRestController {
 
   @PutMapping()
   public PetDto updatePet(@RequestBody PetDto petDto) {
+    System.out.println("updatePet" + petDto);
     return petService.updatePet(petDto);
   }
 

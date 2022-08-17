@@ -5,31 +5,38 @@ import org.springframework.web.bind.annotation.*;
 import ro.sda.java37.finalProject.dto.ClientDto;
 import ro.sda.java37.finalProject.services.ClientService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api/client", produces = "application/json")
 public class ClientRestController {
-    @Autowired
-    private ClientService clientService;
+  @Autowired
+  private ClientService clientService;
 
-    @GetMapping("/{id}")
-    public ClientDto getClientById(@PathVariable Long id) {
-        return clientService.getClientById(id);
-    }
+  @GetMapping()
+  public List<ClientDto> getAllClients() {
+    return clientService.getAllClients();
+  }
 
-    @PostMapping
-    public ClientDto createClient(@RequestBody ClientDto clientDto) {
-        return clientService.createClient(clientDto);
-    }
+  @GetMapping("/{id}")
+  public ClientDto getClientById(@PathVariable Long id) {
+    return clientService.getClientById(id);
+  }
 
-    @PutMapping
-    public ClientDto updateClient(@RequestBody ClientDto clientDto) {
-        return clientService.updateClient(clientDto);
+  @PostMapping
+  public ClientDto createClient(@RequestBody ClientDto clientDto) {
+    return clientService.createClient(clientDto);
+  }
 
-    }
+  @PutMapping
+  public ClientDto updateClient(@RequestBody ClientDto clientDto) {
+    return clientService.updateClient(clientDto);
 
-    @DeleteMapping("{id}")
-    public void deleteClient(@PathVariable Long id) {
-        clientService.deleteClient(id);
-    }
+  }
+
+  @DeleteMapping("/{id}")
+  public void deleteClient(@PathVariable Long id) {
+    clientService.deleteClient(id);
+  }
 
 }

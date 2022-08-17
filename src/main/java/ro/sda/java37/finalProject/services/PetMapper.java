@@ -41,11 +41,10 @@ public class PetMapper implements Mapper<Pet, PetDto> {
         pet.setDateOfBirth(petDto.getDateOfBirth());
         pet.setKilos(petDto.getKilos());
         pet.setIsVaccinated(petDto.getIsVaccinated());
-        // if (petDto.getOwnerId() != null) {
-        //     Client client = clientRepository.getById(petDto.getOwnerId());
-        //     pet.setOwner(client);
-            
-        // }
+        if (petDto.getOwnerId() != null) {
+        Client client = clientRepository.getById(petDto.getOwnerId());
+        pet.setOwner(client);
+        }
 
 
         return pet;

@@ -1,9 +1,13 @@
+import { Client } from "./client";
+
 export class Pet {
     id?: number;
     name?: string;
     race?: string;
     dateOfBirth?: Date;
     kilos?:number;
-    isVaccinated?:boolean;
+    isVaccinated?:Boolean;
+    owner?:Client;
+
  ownerId?:number;
 }

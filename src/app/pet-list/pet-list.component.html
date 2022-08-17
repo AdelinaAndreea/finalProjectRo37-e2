@@ -1,20 +1,24 @@
 <div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Race</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pet of pets">
-            <td>{{ pet.id }}</td>
-            <td>{{ pet.name }}</td>
-            <td>{{pet.race}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pet of pets">
+          <td>{{ pet.name }}</td>
+          <td>{{pet.owner?.firstName}}</td>
+          <td>
+             <!-- <a class="btn btn-success" href="#">Edit</a>-->
+              <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button>
+              <button type="button" class="btn btn-danger" (click)="viewDetails(pet)">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <button type="button" class="btn btn-danger" (click)="addPet()">Add</button> -->
   </div>
+</div>

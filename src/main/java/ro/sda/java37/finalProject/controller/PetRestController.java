@@ -22,8 +22,13 @@ public class PetRestController {
     public PetDto createPet(@RequestBody PetDto petDto) {
         return petService.createPet(petDto);
     }
+  @PutMapping()
+  public PetDto updatePet(@RequestBody PetDto petDto) {
+    System.out.println("updatePet" + petDto);
+    return petService.updatePet(petDto);
+  }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deletePet(@PathVariable Long id) {
         petService.deletePet(id);
     }

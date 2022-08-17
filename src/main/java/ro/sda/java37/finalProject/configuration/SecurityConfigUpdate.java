@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class SecurityConfigUpdate {
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.authorizeRequests((authz) -> authz.antMatchers(HttpMethod.GET, "/api2/cars").hasAnyRole("ADMIN", "CARS")
+    http.authorizeRequests((authz) -> authz.antMatchers(HttpMethod.GET, "/api").hasAnyRole("ADMIN", "USER")
 //                .antMatchers(HttpMethod.POST, "/api/author").authenticated()
 //                .antMatchers("/api/users/**").hasAuthority("ROLE_USER_ADMIN")
         .anyRequest().permitAll() )
@@ -53,7 +53,7 @@ public class SecurityConfigUpdate {
   public CorsConfigurationSource corsConfigurationSource(){
     CorsConfiguration configuration = new CorsConfiguration();
     configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-    configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT"));
+    configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT", "DELETE"));
     configuration.setAllowedHeaders(Arrays.asList("content-type"));
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**",configuration);

@@ -15,8 +15,12 @@ import { ClientListComponent } from './client-list/client-list.component';
 
 
 const routes: Routes = [
-{path:'pets/:ownerId',component:PetListComponent},
-{path:'pets/details',component:PetDetailsComponent},
+  {path: 'pets',
+  children: [
+    {path: '', component:PetListComponent}, 
+    {path:'details',component:PetDetailsComponent},
+    {path: ':ownerId', component:PetListComponent}
+  ]},
 {path:'clients',component:ClientListComponent},
 {path:'clients/details',component:ClientDetailsComponent}
 ];

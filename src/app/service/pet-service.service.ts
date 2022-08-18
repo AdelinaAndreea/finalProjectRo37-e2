@@ -23,7 +23,6 @@ export class PetServiceService {
     return this.http.delete<Pet>(this.petUrl+"/"+id);
   }
   public updatePetById( pet:Pet){
-    console.log("this.updatePetById")
     return this.http.put<Pet>(this.petUrl,pet);
   }
   public addPet(pet:Pet){

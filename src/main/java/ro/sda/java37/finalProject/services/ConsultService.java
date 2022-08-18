@@ -65,4 +65,8 @@ public class ConsultService {
       consultRepository.save(consultEntity);
     return consultMapper.convertToDto(consultEntity);
     }
+    public void deleteConsult(Long id){
+      Consult consult = consultRepository.findById(id).orElseThrow(()->new EntityNotFoundError("Consult not found"));
+    consultRepository.delete(consult);
+    }
 }

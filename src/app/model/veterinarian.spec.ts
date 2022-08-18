@@ -1,7 +1,7 @@
-import { Vet } from './veterinarian';
+import { Veterinarian } from './veterinarian';
 
-describe('Vet', () => {
+describe('Veterinarian', () => {
   it('should create an instance', () => {
-    expect(new Vet()).toBeTruthy();
+    expect(new Veterinarian()).toBeTruthy();
   });
 });

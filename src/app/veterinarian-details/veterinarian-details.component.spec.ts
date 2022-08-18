@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormControl } from '@angular/forms';
 import { VeterinarianDetailsComponent } from './veterinarian-details.component';
 
-describe('VeterinarianDetalilsComponent', () => {
+describe('VeterinarianDetailsComponent', () => {
   let component: VeterinarianDetailsComponent;
   let fixture: ComponentFixture<VeterinarianDetailsComponent>;
 

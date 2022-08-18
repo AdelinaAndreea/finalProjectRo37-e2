@@ -59,4 +59,5 @@ public class SecurityConfigUpdate {
     source.registerCorsConfiguration("/**",configuration);
     return source;
   }
+
 }

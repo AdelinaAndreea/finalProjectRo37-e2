@@ -3,10 +3,11 @@
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Id</th>
             <th scope="col">FirstName</th>
             <th scope="col">LastName</th>
             <th scope="col">Speciality</th>
+            <th scope="col"> Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -15,8 +16,16 @@
             <td>{{ veterinarian.firstName }}</td>
             <td>{{veterinarian.lastName}}</td>
             <td>{{veterinarian.speciality}}</td>
+            <!-- <button type="btn btn-success" href="#">Edit</button> -->
+             <td>              
+              <button type="button"class="btn btn-danger"(click)="deleteVeterinarian(veterinarian.id)">Delete</button>
+              <button type="button"class="btn btn-info"(click)="viewDetails(veterinarian)">Details</button>
+             
+             </td>
           </tr>
         </tbody>
-      </table>
+      </table> 
+      <!-- <button type="button" class="btn btn-light" (click)="createVeterinarian()">Create Veterinarian  -->
     </div>
-  </div>
+    
+ </div>

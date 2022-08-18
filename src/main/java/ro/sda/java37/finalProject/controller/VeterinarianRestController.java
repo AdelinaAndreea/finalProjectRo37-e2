@@ -14,21 +14,21 @@ public class VeterinarianRestController {
     private VeterinarianService veterinarianService;
 
     @GetMapping()
-    public List<VeterinarianDto> getAllVeterinarians() {
+    public List<VeterinarianDto> getAllVeterinarian() {
         return veterinarianService.getAll();
     }
 
     @PostMapping()
     public VeterinarianDto createVeterinarian(@RequestBody VeterinarianDto veterinarianDto) {
-        return veterinarianService.createVeterirarian(veterinarianDto);
+        return veterinarianService.createVeterinarian(veterinarianDto);
     }
 
     @PutMapping()
     public VeterinarianDto updateVeterinarian(@RequestBody VeterinarianDto veterinarianDto) {
-        return veterinarianService.updateVeterirarian(veterinarianDto);
+        return veterinarianService.updateVeterinarian(veterinarianDto);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteVeterinarian(@PathVariable Long id) {
         veterinarianService.deleteVeterinarian(id);
     }

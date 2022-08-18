@@ -23,12 +23,12 @@ export class PetListComponent implements OnInit {
       console.log("Pet with id "+id+" has been removed");
     })
   }
-  // addPet(pet:Pet){
+  //  addPet(pet:Pet){
   //   this.petService.addPet(pet).subscribe(data =>{
   //     this.ngOnInit();
-  //     console.log("Pet with id "+pet.id+" has been added");
-  //   })
-  // }
+  //      console.log("Pet with id "+pet.id+" has been added");
+  //    })
+  //  }
   addPet(){
   }
 // onAdd(){

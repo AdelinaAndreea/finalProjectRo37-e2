@@ -1,12 +1,13 @@
-<div class="container"> 
+<div class="container buttom">
     <h2>Veterinarian details</h2>
     <table class="table table-bordered tavel-striped table-hover">
         <thead>
-            <tr>
-                <td>Id<td>
+            <tr class="thead-light">
+                <td>Id</td>
                 <td>FirstName</td>
                 <td>LastName</td>
                 <td>Speciality</td>
+                <td>Actions</td>
             </tr>
         </thead>
         <tbody>
@@ -15,15 +16,26 @@
                 <td>{{veterinarian.firstName}}</td>
                 <td>{{veterinarian.lastName}}</td>
                 <td>{{veterinarian.speciality}}</td>
-            <td>
-                <!-- <a class="btn btn-info" [routerLink]="['/veterinarian, veterinarian.id']">Details</a>
-                <a class="btn btn-success" href="#">Edit</a> -->
-                <!-- <button type="button" class="btn btn-danger"  (click)="deleteVeterinarian(veterinarian.id)">Delete</button> -->
-            </td>
+                <td><button type="button" class="btn btn-primary" (click)="onEdit(veterinarian)">Edit</button></td>
             </tr>
-    
         </tbody>
-    
-        </table>
-        
-    </div>
+      </table>
+      <hr>
+        <div *ngIf ="isVisible" >
+            <form [formGroup]="myGroup">
+           <div class="mb-3">
+             <label for="firstname" class="form-label" >FirstName</label>
+             <input type="string" class="form-control" formControlName="formVeterinarianFirstName">
+           </div>
+           <div class="mb-3">
+            <label for="lastname" class="form-label">LastName</label>
+            <input type="string" class="form-control" formControlName="formVeterinarianLastName">
+          </div>
+           <div class="mb-3">
+             <label for="speciality" class="form-label">Speciality</label>
+             <input type="string" class="form-control" formControlName="formVeterinarianSpeciality" >
+           </div>
+             <button type="submit" class="btn btn-primary" (click)="updateVeterinarian()">Submit</button>
+            </form>
+        </div>
+  </div>

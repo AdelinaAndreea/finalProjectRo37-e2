@@ -3,6 +3,7 @@ package ro.sda.java37.finalProject.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.PetDto;
+//import ro.sda.java37.finalProject.entities.Client;
 import ro.sda.java37.finalProject.entities.Client;
 import ro.sda.java37.finalProject.entities.Pet;
 import ro.sda.java37.finalProject.repository.ClientRepository;

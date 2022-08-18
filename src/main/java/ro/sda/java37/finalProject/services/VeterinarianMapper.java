@@ -1,14 +1,17 @@
 package ro.sda.java37.finalProject.services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.VeterinarianDto;
 import ro.sda.java37.finalProject.entities.Veterinarian;
+import ro.sda.java37.finalProject.repository.VeterinarianRepository;
 
 @Service
 @AllArgsConstructor
 public class VeterinarianMapper implements Mapper<Veterinarian, VeterinarianDto> {
-
+@Autowired
+  VeterinarianRepository veterinarianRepository;
     @Override
     public VeterinarianDto convertToDto(Veterinarian veterinarian) {
         VeterinarianDto veterinarianDto = new VeterinarianDto();

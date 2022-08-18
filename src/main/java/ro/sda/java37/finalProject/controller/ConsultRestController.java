@@ -39,5 +39,10 @@
    @PutMapping()
    public ConsultDto updateConsult(@RequestBody ConsultDto consultDto) {
      return consultService.updateConsult(consultDto);
+
+   }
+   @DeleteMapping("{id}")
+   public void deleteConsult(@PathVariable Long id){
+     consultService.deleteConsult(id);
    }
  }

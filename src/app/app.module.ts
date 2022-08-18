@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { FormBuilder, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { PetDetailsComponent } from './pet-details/pet-details.component';
+import { VeterinarianListComponent } from './veterinarian-list/veterinarian-list.component';
+import { VeterinarianDetailsComponent } from './veterinarian-details/veterinarian-details.component';
 // import { PetCreateComponent } from './pet-create/pet-create.component';
 // import { ClientDetailsComponent } from './client-details/client-details.component';
 // import { ClientListComponent } from './client-list/client-list.component';
@@ -17,6 +17,8 @@ import { PetDetailsComponent } from './pet-details/pet-details.component';
 const routes: Routes = [
 {path:'pets',component:PetListComponent},
 {path:'pets/details',component:PetDetailsComponent},
+{path:'veterinarian',component:VeterinarianListComponent},
+{path:'veterinarian/details',component:VeterinarianDetailsComponent}
 ];
 
 
@@ -24,7 +26,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PetListComponent,
-    PetDetailsComponent
+    PetDetailsComponent,
+    VeterinarianListComponent,
+    VeterinarianDetailsComponent
     // PetCreateComponent,
     // ClientDetailsComponent,
     // ClientListComponent

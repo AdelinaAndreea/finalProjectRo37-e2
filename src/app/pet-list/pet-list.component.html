@@ -11,14 +11,15 @@
         <tr *ngFor="let pet of pets">
           <td>{{ pet.name }}</td>
           <td>{{pet.owner?.firstName}}</td>
+          <!-- <a class="btn btn-success" href="#">Edit</a> -->
           <td>
-             <!-- <a class="btn btn-success" href="#">Edit</a>-->
               <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button>
-              <button type="button" class="btn btn-danger" (click)="viewDetails(pet)">Details</button>
-          </td>
+              <button type="button" class="btn btn-info" (click)="viewDetails(pet)">Details</button>
+              <button type="button" class="btn btn-danger" (click)="addPet()">Add</button>
+            </td>
         </tr>
       </tbody>
     </table>
-    <!-- <button type="button" class="btn btn-danger" (click)="addPet()">Add</button> -->
+    
   </div>
 </div>

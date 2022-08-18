@@ -8,13 +8,13 @@ import { Observable } from 'rxjs/internal/Observable';
 export class PetServiceService {
   private petUrl : string;
   constructor(private http : HttpClient) {
-    this.petUrl='http://localhost:8880/api/pet';
+    this.petUrl='http://localhost:8880/api/pet/';
    }
    public findAll() :Observable<Pet[]>{
     return this.http.get<Pet[]>(this.petUrl);
    }
    public deletePetById(id:any){
-    return this.http.delete<Pet>(this.petUrl+'/'+id);
+    return this.http.delete<Pet>(this.petUrl+id);
   }
   public updatePetById( pet:Pet){
     console.log("this.updatePetById")

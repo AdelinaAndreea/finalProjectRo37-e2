@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { Pet } from '../model/pet';
 import { PetServiceService } from '../service/pet-service.service';
 
@@ -14,18 +14,28 @@ export class PetListComponent implements OnInit {
 
  pets !: Pet[];
  public isVisible:boolean=false;
+ownerId:any;
+public isAddButtonVisible:boolean=false;
 
 
 
-
-  constructor(private petService : PetServiceService, private router: Router) { }
+  constructor(private petService : PetServiceService, private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(){
- 
-    
+  this.ownerId=this.route.snapshot.paramMap.get('ownerId');
+  if(this.ownerId=="null") {
+    this.isAddButtonVisible=false;
     this.petService.findAll().subscribe( data=> {
       this.pets = data;
-    });
+   });
+  }else{
+    this.isAddButtonVisible=true;
+    this.petService.findPetById(this.ownerId).subscribe( data=> {
+      this.pets = data;
+    
+   });
+  }
+  
   }
 
   deletePet(id:any){
@@ -51,7 +61,7 @@ export class PetListComponent implements OnInit {
 // }
 
   viewDetails(pet: Pet) {
-    
+    console.log("viewDetails");
     this.router.navigateByUrl('/pets/details', {state: {petJson:pet}});
   }
  

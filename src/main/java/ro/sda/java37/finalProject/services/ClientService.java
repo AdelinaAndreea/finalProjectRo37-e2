@@ -8,12 +8,14 @@ import ro.sda.java37.finalProject.entities.Client;
 import ro.sda.java37.finalProject.exceptions.EntityNotFoundError;
 import ro.sda.java37.finalProject.repository.ClientRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class ClientService {
   @Autowired
   private ClientRepository clientRepository;
@@ -32,7 +34,9 @@ public class ClientService {
   }
 
   public List<ClientDto> getAllClients() {
-    return clientRepository.findAll().stream().map(e -> clientMapper.convertToDto(e)).collect(Collectors.toList());
+    return clientRepository.findAll().stream()
+      .map(e -> clientMapper.convertToDto(e))
+      .collect(Collectors.toList());
   }
 
   public ClientDto createClient(ClientDto clientDto) {

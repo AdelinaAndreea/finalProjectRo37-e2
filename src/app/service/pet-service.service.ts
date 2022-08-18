@@ -7,6 +7,9 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class PetServiceService {
+  findPetById(ownerId: any):Observable<Pet[]> {
+    return this.http.get<Pet[]>(this.petUrl);//TODO: implement right call
+  }
   private petUrl : string;
 
   constructor(private http : HttpClient) {

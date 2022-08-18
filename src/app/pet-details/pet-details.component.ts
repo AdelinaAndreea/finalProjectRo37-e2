@@ -19,15 +19,16 @@ export class PetDetailsComponent implements OnInit{
     constructor(private petService:PetServiceService, private route: ActivatedRoute, private router: Router, private formBuilder:FormBuilder){
         //console.log(this.router.getCurrentNavigation()?.extras.state?.'petJson');
         // this.router.getCurrentNavigation()?.extras.state.petJson;
+        console.log("viewDetails");
         this.pet=this.router.getCurrentNavigation()?.extras.state?.['petJson'];
-        this.router
-    const currentNavigation = this.router.getCurrentNavigation();
+        // this.router
+    // const currentNavigation = this.router.getCurrentNavigation();
      }
 
 
 
 ngOnInit(): void {
-    //this.readPetById();
+ 
     this.createForm();
     
   }

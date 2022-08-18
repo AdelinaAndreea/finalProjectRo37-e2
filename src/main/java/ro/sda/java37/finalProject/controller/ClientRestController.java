@@ -7,6 +7,7 @@ import ro.sda.java37.finalProject.services.ClientService;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping(value = "/api/client", produces = "application/json")
 public class ClientRestController {

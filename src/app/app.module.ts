@@ -15,9 +15,10 @@ import { ClientListComponent } from './client-list/client-list.component';
 
 
 const routes: Routes = [
-{path:'pets',component:PetListComponent},
+{path:'pets/:ownerId',component:PetListComponent},
 {path:'pets/details',component:PetDetailsComponent},
-{path:'client',component:ClientListComponent}
+{path:'clients',component:ClientListComponent},
+{path:'clients/details',component:ClientDetailsComponent}
 ];
 
 

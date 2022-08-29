@@ -7,10 +7,13 @@ import { Veterinarian } from './model/veterinarian';
   providedIn: 'root'
 })
 export class VeterinarianServiceService {
+  addAll() {
+    throw new Error('Method not implemented.');
+  }
   addVeterinarianById(veterinarian: Veterinarian) {
     throw new Error('Method not implemented.');
   }
-  private veterinarianUrl :string;
+  private readonly veterinarianUrl :string;
   constructor(private http : HttpClient) {
     this.veterinarianUrl='http://localhost:8880/api/veterinarian/';
   }
@@ -21,12 +24,14 @@ export class VeterinarianServiceService {
      return this.http.delete<Veterinarian>(this.veterinarianUrl+id);
    }
   public updateVeterinarianById(veterinarian:Veterinarian){
-    console.log("this.updateVeterinarianById")
+
      return this.http.put<Veterinarian>(this.veterinarianUrl,veterinarian);
    }
-   public createVeterinarian(veterinarian:Veterinarian){
-         return this.http.post<Veterinarian>(this.veterinarianUrl,veterinarian);
-     
+
+
+  public createVeterinarian(veterinarian:Veterinarian){
+          return this.http.post<Veterinarian> (this.veterinarianUrl,veterinarian);
+
    }
-   
+
 }

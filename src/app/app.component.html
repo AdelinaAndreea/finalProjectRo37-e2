@@ -1,13 +1,13 @@
-<!-- <div class="container-fluid">
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-   
+ <div class="container-fluid">
+  <div class="navbar navbar-expand-lg navbar-light bg-light">
+
     <div class="container-fluid">
       <div class="card-body">
-        <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+        <h2 class="card-title text-center text-black py-3">{{ title }}</h2>
       <img src="../assets/catel2.jpg" alt="logo" style="width: 450px"/>
       <a class="navbar-brand" routerLink="/home">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,9 +18,18 @@
           </li>
           <ul></ul>
           <li class="nav-item">
-            <a class="nav-link list-inline-item" class="btn btn-info" routerLink="/veterinarian">Veterinarian</a>
+          <!-- <li class="nav-item"> -->
+            <a class="nav-link link active" class="btn btn-info" aria-current="page" routerLink="/veterinarian">Veterinarian</a>
           </li>
 
+          <ul></ul>
+          <li class="nav-item">
+            <a class="nav-link link active" class="btn btn-info" aria-current="page" routerLink="/add-new-veterinarian">Add Veterinarian</a>
+          </li>
+<!--          <li class="nav-item dropdown">-->
+<!--            <a class="nav-link link active" class="btn btn-info" aria-current="page" routerLink = "/add-new-veterinarian" role="button"> Add Veterinarian-->
+<!--            </a>-->
+<!--            </li>-->
           <ul></ul>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" class="btn btn-info" href="/pets" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Pet
@@ -34,35 +43,11 @@
           </form>
           </ul>
         </ul>
-        <router-outlet></router-outlet> -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/pets" class="btn btn-info">List User</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/adduser" class="btn btn-info">Add User</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/veterinarian" class="btn btn-info">List Veterinarian</a>
-            </li>
-            <!-- <li class="list-inline-item">
-              <a routerLink="/adduser" class="btn btn-info">Add User</a>
-            </li> -->
-            <ul class="nav nav-pills">
-              <li><a routerLinkActive="active" routerLink="/home">Home</a></li>
-              <li><a routerLinkActive="active" routerLink="/login">Login</a></li>
-              <li><a routerLinkActive="active" routerLink="/logout">Logout</a></li>
-            </ul>
-          </ul>
-        </div>
-      </div>
+
+    </div>
       <router-outlet></router-outlet>
     </div>
   </div>
-</div>
+  </div>
+ </div>
+

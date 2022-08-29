@@ -1,0 +1,23 @@
+<div class="container buttom">
+    <h2>New Veterinarian </h2>
+      <hr>
+
+            <form [formGroup]="myGroup">
+           <div class="mb-3">
+             <label for="firstname" class="form-label" >FirstName</label>
+             <input type="string" class="form-control" formControlName="formVeterinarianFirstName">
+           </div>
+           <div class="mb-3">
+            <label for="lastname" class="form-label">LastName</label>
+            <input type="string" class="form-control" formControlName="formVeterinarianLastName">
+          </div>
+           <div class="mb-3">
+             <label for="speciality" class="form-label">Speciality</label>
+             <input type="string" class="form-control" formControlName="formVeterinarianSpeciality" >
+           </div>
+
+             <button type="submit" class="btn btn-danger" (click)="createVeterinarian()">Save </button>
+
+            </form>
+
+  </div>

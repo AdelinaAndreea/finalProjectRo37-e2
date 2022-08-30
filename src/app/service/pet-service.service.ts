@@ -6,7 +6,13 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class PetServiceService {
-  private petUrl : string;
+  addAll(){
+    throw new Error('Method not implemented.');
+  }
+  createPet(pet: Pet) {
+    throw new Error('Method not implemented.');
+  }
+  private readonly petUrl : string;
   constructor(private http : HttpClient) {
     this.petUrl='http://localhost:8880/api/pet/';
    }

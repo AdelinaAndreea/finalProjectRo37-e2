@@ -10,26 +10,20 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class PetDetailsComponent implements OnInit {
     id!: number;
+    name!:string;
     public pet!: Pet;
     public isVisible: boolean = false;
     public myGroup!: FormGroup;
+
     constructor(private petService: PetServiceService, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) {
-        //console.log(this.router.getCurrentNavigation()?.extras.state?.'petJson');
-        // this.router.getCurrentNavigation()?.extras.state.petJson;
         this.pet = this.router.getCurrentNavigation()?.extras.state?.['petJson'];
         this.router
         const currentNavigation = this.router.getCurrentNavigation();
     }
     ngOnInit(): void {
-        //this.readPetById();
         this.createForm();
     }
-    //   readPetById(){
-    //     this.id=this.route.snapshot.params["petId"];
-    //     }
-    readPetByName() {
-        // this.name=this.route.snapshot.params["petName"];
-    }
+   
     onEdit(item: Pet) {
         this.isVisible = true;
     }
@@ -41,9 +35,9 @@ export class PetDetailsComponent implements OnInit {
                 formDateOfBirth: new FormControl(this.pet.dateOfBirth),
                 formKilos: new FormControl(this.pet.kilos),
                 formVaccinated: new FormControl(this.pet.isVaccinated),
-            }
-        )
+            })
     }
+    
     updatePet() {
         this.isVisible = false;
         let petTemp: Pet = new Pet();

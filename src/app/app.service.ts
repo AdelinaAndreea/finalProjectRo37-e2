@@ -7,7 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {VeterinarianServiceService} from "./veterinarian-service.service";
 import {PetServiceService} from "./service/pet-service.service";
 import { AddNewVeterinarianComponent } from './add-new-veterinarian/add-new-veterinarian.component';
-
+import { AddNewPetComponent } from './add-new-pet/add-new-pet.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     // AppComponent
@@ -17,7 +18,7 @@ import { AddNewVeterinarianComponent } from './add-new-veterinarian/add-new-vete
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [VeterinarianServiceService, PetServiceService,AddNewVeterinarianComponent],
+  providers: [VeterinarianServiceService, PetServiceService,AddNewVeterinarianComponent,HomeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

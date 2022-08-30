@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Veterinarian } from '../model/veterinarian';
+import { VeterinarianListComponent } from '../veterinarian-list/veterinarian-list.component';
 import { VeterinarianServiceService } from '../veterinarian-service.service';
 
 @Component({
@@ -12,13 +13,10 @@ import { VeterinarianServiceService } from '../veterinarian-service.service';
 export class AddNewVeterinarianComponent implements OnInit {
   id!: number;
   firstName!: string;
-  public veterinarian!: Veterinarian;
   public isVisible: boolean = false;
   public myGroup!: FormGroup;
   
-  constructor(private veterinarianService: VeterinarianServiceService, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) {
-    this.veterinarian = this.router.getCurrentNavigation()?.extras.state?.['veterinarianJson'];
-    console.log("Am primit veterinarul:" + this.veterinarian);
+  constructor(private veterinarianService: VeterinarianServiceService, private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder, private veterianListComponent: VeterinarianListComponent) {
     const currentNavigation = this.router.getCurrentNavigation();
   }
   ngOnInit(): void {
@@ -26,7 +24,7 @@ export class AddNewVeterinarianComponent implements OnInit {
     this.createForm();
   }
 
- 
+
   private createForm() {
 
     this.myGroup = this.formBuilder.group(
@@ -47,15 +45,16 @@ export class AddNewVeterinarianComponent implements OnInit {
     veterinarian.speciality = this.myGroup.get('formVeterinarianSpeciality')?.value;
 
     this.veterinarianService.createVeterinarian(veterinarian).subscribe(veterinarianDto => {
-      this.veterinarian.id = veterinarianDto.id;
-      this.veterinarian.firstName = veterinarianDto.firstName;
-      this.veterinarian.lastName = veterinarianDto.lastName;
-      this.veterinarian.speciality = veterinarianDto.speciality;
 
     });
+ this.veterianListComponent.veterianListUpdate();
+      
+    this.router.navigateByUrl('veterinarian');
 
-    this.router.navigateByUrl('veterinarian',);
-  }
-
-
+    }
 }
+
+    
+
+
+

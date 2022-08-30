@@ -1,10 +1,10 @@
- <div class="container-fluid">
-  <div class="navbar navbar-expand-lg navbar-light bg-light">
+ <!-- <div class="container-fluid">
+  <div class="navbar navbar-expand-lg navbar-light bg-dark"  img src="../assets/Home-page.jpg">
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="card-body">
-        <h2 class="card-title text-center text-black py-3">{{ title }}</h2>
-      <img src="../assets/catel2.jpg" alt="logo" style="width: 450px"/>
+        <h2 class="card-title text-center text-light py-3">{{ title }}</h2>
+      <img src="../assets/catel2.jpg" alt="logo" style="width: 450px">
       <a class="navbar-brand" routerLink="/home">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -18,7 +18,6 @@
           </li>
           <ul></ul>
           <li class="nav-item">
-          <!-- <li class="nav-item"> -->
             <a class="nav-link link active" class="btn btn-info" aria-current="page" routerLink="/veterinarian">Veterinarian</a>
           </li>
 
@@ -26,14 +25,14 @@
           <li class="nav-item">
             <a class="nav-link link active" class="btn btn-info" aria-current="page" routerLink="/add-new-veterinarian">Add Veterinarian</a>
           </li>
-<!--          <li class="nav-item dropdown">-->
-<!--            <a class="nav-link link active" class="btn btn-info" aria-current="page" routerLink = "/add-new-veterinarian" role="button"> Add Veterinarian-->
-<!--            </a>-->
-<!--            </li>-->
           <ul></ul>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" class="btn btn-info" href="/pets" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Pet
           </a>
+          </li> 
+          <ul></ul>
+          <li class="nav-item">
+            <a class="nav-link link active" class="btn btn-info" aria-current="page" routerLink="/add-new-pet">Add Pet</a>
           </li>
           <ul><ul>  </ul>
           <form class="d-flex">
@@ -49,5 +48,64 @@
     </div>
   </div>
   </div>
- </div>
+ </div> -->
 
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand" href=""  style="width: 450px">VET</a>
+   
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+   
+        <li class="nav-item" >
+         
+          <a class="nav-link"class="btn btn-info" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <ul></ul>
+
+        <li class="nav-item" >
+          <ul></ul>
+          <a class="nav-link"class="btn btn-info" aria-current="page" routerLink="/veterinarian">Veterinarian</a>
+        </li>
+        <ul></ul>
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-info"  routerLink="/add-new-veterinarian">Add Veterinarian</a>
+          
+        </li>
+        <ul></ul>
+      
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-info" href="/pets">Pets detalii si lista</a>
+        </li>
+        <ul></ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" class="btn btn-info" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pet</a><ul></ul>
+          <div class="dropdown-menu">
+            
+            <a class="dropdown-item" routerLink="/pets">Liste Pet</a>
+            <ul></ul>
+            <a class="dropdown-item" href="/add-new-pet">Add Pets</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+          
+        </li>
+      </ul>
+      <ul></ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <ul></ul> <ul></ul>
+      
+   <ul></ul> <ul>
+  </ul>
+    
+    </div>
+
+  </div>
+
+</nav>
+<div><router-outlet></router-outlet></div>

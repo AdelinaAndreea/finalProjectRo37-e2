@@ -20,7 +20,8 @@ public class VeterinarianRestController {
 
     @PostMapping()
     public VeterinarianDto createVeterinarian(@RequestBody VeterinarianDto veterinarianDto) {
-        return veterinarianService.createVeterinarian(veterinarianDto);
+      VeterinarianDto result =  veterinarianService.createVeterinarian(veterinarianDto);
+        return result;
     }
 
     @PutMapping()

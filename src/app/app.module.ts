@@ -12,6 +12,12 @@ import { AddNewVeterinarianComponent } from './add-new-veterinarian/add-new-vete
 import { AddNewPetComponent } from './add-new-pet/add-new-pet.component'
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AuthServiceComponent } from './auth-service/auth-service.component';
+import { RegisterComponent } from './register/register.component';
+import { StorageComponent } from './storage/storage.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 // import { PetCreateComponent } from './pet-create/pet-create.component';
 // import { ClientDetailsComponent } from './client-details/client-details.component';
@@ -40,6 +46,13 @@ const routes: Routes = [
     AddNewVeterinarianComponent,
     AddNewPetComponent,
     HomeComponent,
+    LoginComponent,
+    AuthServiceComponent,
+    RegisterComponent,
+    StorageComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+
    
   ],
   imports: [

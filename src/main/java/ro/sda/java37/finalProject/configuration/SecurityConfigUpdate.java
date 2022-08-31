@@ -7,6 +7,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 // import org.springframework.security.core.userdetails.User;
 // import org.springframework.security.core.userdetails.UserDetails;
 // import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -34,21 +37,21 @@ public class SecurityConfigUpdate {
     ;
     return http.build();
   }
-  // @Bean
-  // // public InMemoryUserDetailsManager userDetailsService() {
-  // //   final UserDetails admin = User.withDefaultPasswordEncoder()
-  // //     .username("root")
-  // //     .password("Secret_123")
-  // //     .roles("root")
-  // //     .build();
-  //   // UserDetails user = User.withDefaultPasswordEncoder()
-  //   //   .username("user")
-  //   //   .password("Secret_123")
-  //   //   .authorities("ROLE_USER")
-  //   //   .build();
+   @Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+      final UserDetails admin = User.withDefaultPasswordEncoder()
+        .username("root")
+        .password("Secret_123")
+        .roles("ADMIN")
+        .build();
+      UserDetails user = User.withDefaultPasswordEncoder()
+        .username("user")
+        .password("Secret_123")
+        .authorities("ROLE_USER")
+        .build();
 
-  //   // return new InMemoryUserDetailsManager(admin,user);
-  // }
+      return new InMemoryUserDetailsManager(admin,user);
+   }
   @Bean
   public CorsConfigurationSource corsConfigurationSource(){
     CorsConfiguration configuration = new CorsConfiguration();

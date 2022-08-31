@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'Veterinarian';
   data = {}  as any;
-  constructor(private http: HttpClient) {
-    // http.get('resource').subscribe(data => this.data = data);
-  }
+ 
+
+  constructor(private http: HttpClient) {  }
+  
+  
 }

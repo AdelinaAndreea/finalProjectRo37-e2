@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthServiceComponent } from '../auth-service/auth-service.component';
-import { StorageComponent } from '../storage/storage.component';
+import { AuthService } from '../services_autentificare/auth.service';
+import { StorageService } from '../services_autentificare/storage.service';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  constructor(private authService: AuthServiceComponent , private storageService: StorageComponent) { }
+  constructor(private authService: AuthService , private storageService: StorageService) { }
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;

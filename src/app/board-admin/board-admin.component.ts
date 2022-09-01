@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../auth_services/user.service';
+import { UserService } from '../services_autentificare/user.service';
 
 @Component({
   selector: 'app-board-admin',

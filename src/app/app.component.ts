@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { StorageComponent } from './storage/storage.component';
-import { AuthServiceComponent } from './auth-service/auth-service.component';
+import { StorageService } from './services_autentificare/storage.service';
+import { AuthService } from './services_autentificare/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private http: HttpClient, private storageService: StorageComponent, private authService:AuthServiceComponent ) {  }
+  constructor(private http: HttpClient, private storageService: StorageService, private authService:AuthService ) {  }
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();
     if (this.isLoggedIn) {

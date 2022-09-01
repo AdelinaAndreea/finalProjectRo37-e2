@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageComponent } from '../storage/storage.component';
+import { StorageService } from '../services_autentificare/storage.service';
+
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +9,7 @@ import { StorageComponent } from '../storage/storage.component';
 })
 export class ProfileComponent implements OnInit {
   currentUser: any;
-  constructor(private storageService: StorageComponent) { }
+  constructor(private storageService: StorageService) { }
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
   }

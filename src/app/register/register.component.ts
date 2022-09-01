@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { AuthServiceComponent } from '../auth-service/auth-service.component';
+import { AuthService } from '../services_autentificare/auth.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private authService: AuthServiceComponent) { }
+  constructor(private authService: AuthService) { }
   ngOnInit(): void {
   }
   onSubmit(): void {

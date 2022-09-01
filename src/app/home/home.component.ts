@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
-import { UserService } from '../auth_services/user.service';
-
+import { UserService } from '../services_autentificare/user.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +9,12 @@ import { UserService } from '../auth_services/user.service';
 })
 export class HomeComponent implements OnInit {
     title: string = 'HOME';
-   content?:string;
+    content?:string;
     
 
   constructor( private route: ActivatedRoute, private router: Router,private userService:UserService) { }
   ngOnInit(): void {
-  this.userService.getPublicContent().subscribe({
+    this.userService.getPublicContent().subscribe({
     next: data => {
       this.content = data;
     },
@@ -27,6 +26,7 @@ export class HomeComponent implements OnInit {
       }
     }
   });
+  
   }
 }
   

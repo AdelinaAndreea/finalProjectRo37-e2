@@ -13,11 +13,11 @@ import { AddNewPetComponent } from './add-new-pet/add-new-pet.component'
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { AuthServiceComponent } from './auth-service/auth-service.component';
 import { RegisterComponent } from './register/register.component';
-import { StorageComponent } from './storage/storage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+
 
 // import { PetCreateComponent } from './pet-create/pet-create.component';
 // import { ClientDetailsComponent } from './client-details/client-details.component';
@@ -32,7 +32,8 @@ const routes: Routes = [
 {path:'add-new-veterinarian', component:AddNewVeterinarianComponent},
 {path:'add-new-pet',component:AddNewPetComponent},
 {path:'home',component:HomeComponent},
-
+{path:'login',component:LoginComponent},
+{path:'register',component:RegisterComponent}
 ];
 
 
@@ -47,11 +48,10 @@ const routes: Routes = [
     AddNewPetComponent,
     HomeComponent,
     LoginComponent,
-    AuthServiceComponent,
     RegisterComponent,
-    StorageComponent,
     ProfileComponent,
     BoardAdminComponent,
+    BoardModeratorComponent,
 
    
   ],
@@ -64,7 +64,7 @@ const routes: Routes = [
     ReactiveFormsModule,
   ],
   exports: [RouterModule],
-  providers: [FormBuilder, VeterinarianListComponent],
+  providers: [FormBuilder, VeterinarianListComponent,PetListComponent,],
 
   bootstrap: [AppComponent]
 })

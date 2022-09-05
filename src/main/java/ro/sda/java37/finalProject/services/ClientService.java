@@ -4,9 +4,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ro.sda.java37.finalProject.dto.ClientDto;
+import ro.sda.java37.finalProject.dto.PetDto;
 import ro.sda.java37.finalProject.entities.Client;
+import ro.sda.java37.finalProject.entities.Pet;
 import ro.sda.java37.finalProject.exceptions.EntityNotFoundError;
 import ro.sda.java37.finalProject.repository.ClientRepository;
+import ro.sda.java37.finalProject.repository.PetRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -21,6 +24,10 @@ public class ClientService {
   private ClientRepository clientRepository;
   @Autowired
   private ClientMapper clientMapper;
+  @Autowired
+  private PetRepository petRepository;
+  @Autowired
+  private PetMapper petMapper;
 
 
   public ClientDto getClientById(Long id) {
@@ -60,6 +67,13 @@ public class ClientService {
 
   public void deleteClient(Long id) {
     clientRepository.deleteById(id);
+  }
+
+  public List<PetDto> getPetsByClientId(Long id) {
+    List<Pet> myPets = petRepository.getAllByOwnerId(id);
+    return myPets.stream()
+      .map(pet -> petMapper.convertToDto(pet))
+      .collect(Collectors.toList());
   }
 }
 

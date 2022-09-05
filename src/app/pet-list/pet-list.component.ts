@@ -19,11 +19,13 @@ public isAddButtonVisible:boolean=false;
 
 
 
+
   constructor(private petService : PetServiceService, private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(){
   this.ownerId=this.route.snapshot.paramMap.get('ownerId');
-  if(this.ownerId=="null") {
+  console.log(this.ownerId);
+  if(this.ownerId==null) {
     this.isAddButtonVisible=false;
     this.petService.findAll().subscribe( data=> {
       this.pets = data;
@@ -45,17 +47,18 @@ public isAddButtonVisible:boolean=false;
       console.log("Pet with id "+id+" has been removed");
     })
   }
-  // addPet(pet:Pet){
-  //   this.petService.addPet(pet).subscribe(data =>{
-  //     this.ngOnInit();
-  //     console.log("Pet with id "+pet.id+" has been added");
-  //   })
-  // }
-
-  addPet(){
-
-
+  
+  addPet(pet:Pet){
+    this.petService.addPet(pet).subscribe(data =>{
+      this.ngOnInit();
+      console.log("Pet with id "+pet.id+" has been added");
+    })
   }
+  showPetForm(){
+    //TODO
+  }
+
+
 // onAdd(){
 //   this.isVisible=true;
 // }

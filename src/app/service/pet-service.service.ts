@@ -8,12 +8,14 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class PetServiceService {
   findPetById(ownerId: any):Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.petUrl);//TODO: implement right call
+    return this.http.get<Pet[]>(this.clientUrl+"/"+ownerId+"/pets");
   }
   private petUrl : string;
+  private clientUrl : string;
 
   constructor(private http : HttpClient) {
     this.petUrl='http://localhost:8880/api/pet';
+    this.clientUrl='http://localhost:8880/api/client';
    }
    public findAll() :Observable<Pet[]>{
     return this.http.get<Pet[]>(this.petUrl);

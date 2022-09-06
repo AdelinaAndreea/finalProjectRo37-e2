@@ -20,6 +20,7 @@
             
                 <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button>
                 <button type="button" class="btn btn-danger" (click)="viewDetails(pet)">Details</button>
+                <button type="button" class="btn btn-danger" (click)="showConsultForm(pet)">New Consult</button>
             </td>
             
           </tr>
@@ -54,7 +55,31 @@
        <button type="submit" class="btn btn-primary" (click)="addPet()">Submit</button>
      </form>
    </div>
-    </div>
+    
+     
+  </div>
+  <div *ngIf ="isNewConsultFormVisible" > 
+    <form [formGroup]="myGroup2" >
+   <div class="mb-3">
+     <label for="date" class="form-label">Date</label>
+     <input type="date" class="form-control" formControlName="formDate">
+   </div>
+   <div class="mb-3">
+     <label for="description" class="form-label">Description</label>
+     <input type="string" class="form-control" formControlName="formDescription" >
+   </div>
+   <div class="mb-3">
+       <label for="petName" class="form-label">Pet Name</label>
+       <input type="string" class="form-control" formControlName="formPetName" >
+   </div>
+   <div class="mb-3">
+       <label for="price" class="form-label">Price</label>
+       <input type="number" class="form-control" formControlName="formPrice" >
+   </div>
+   <button type="submit" class="btn btn-primary" (click)="addConsult()">Submit</button>
+ </form>
+</div>
+
   </div>
   
   

@@ -59,10 +59,9 @@ public class ClientService {
     clientEntity.setLastName(clientDto.getLastName());
     clientEntity.setEmail(clientEntity.getEmail());
     clientEntity.setPhoneNumber(clientDto.getPhoneNumber());
-    clientRepository.save(clientEntity);
+    clientRepository.saveAndFlush(clientEntity);
+    
     return clientMapper.convertToDto(clientEntity);
-
-
   }
 
   public void deleteClient(Long id) {

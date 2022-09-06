@@ -13,59 +13,60 @@ import ro.sda.java37.finalProject.repository.VeterinarianRepository;
 
 public class ConsultMapper implements Mapper<Consult, ConsultDto> {
 
-    @Autowired
-    private ConsultRepository consultRepository;
+  @Autowired
+  private ConsultRepository consultRepository;
 
 
-    @Autowired
-    private PetMapper petMapper;
+  @Autowired
+  private PetMapper petMapper;
 
-    @Autowired
-    private PetRepository petRepository;
+  @Autowired
+  private PetRepository petRepository;
 
-    @Autowired
-    private VeterinarianMapper veterinarianMapper;
+  @Autowired
+  private VeterinarianMapper veterinarianMapper;
 
-    @Autowired
-    private VeterinarianRepository veterinarianRepository;
+  @Autowired
+  private VeterinarianRepository veterinarianRepository;
 
-    @Override
-    public ConsultDto convertToDto(Consult consult) {
-        ConsultDto consultDto = new ConsultDto();
-        consultDto.setId(consult.getId());
-        consultDto.setDate(consult.getDate());
-        consultDto.setDescription(consult.getDescription());
-        consultDto.setPrice(consult.getPrice());
-        if (consult.getPet() != null) {
-            consultDto.setPet(petMapper.convertToDto(consult.getPet()));
-            consultDto.setPetId(consult.getPet().getId());
-        }
-        if (consult.getVeterinarian() != null) {
-            consultDto.setVeterinarian(veterinarianMapper.convertToDto(consult.getVeterinarian()));
-            consultDto.setVeterinarianId(consult.getVeterinarian().getId());
-        }
-
-
-        return consultDto;
-
+  @Override
+  public ConsultDto convertToDto(Consult consult) {
+    ConsultDto consultDto = new ConsultDto();
+    consultDto.setId(consult.getId());
+    consultDto.setDate(consult.getDate());
+    consultDto.setDescription(consult.getDescription());
+    consultDto.setPrice(consult.getPrice());
+    if (consult.getPet() != null) {
+      consultDto.setPet(petMapper.convertToDto(consult.getPet()));
+      consultDto.setPetId(consult.getPet().getId());
+    }
+    if (consult.getVeterinarian() != null) {
+      consultDto.setVeterinarian(veterinarianMapper.convertToDto(consult.getVeterinarian()));
+      consultDto.setVeterinarianId(consult.getVeterinarian().getId());
     }
 
-    @Override
-    public Consult convertToEntity(ConsultDto consultDto) {
-        Consult consult = new Consult();
-        consult.setId(consultDto.getId());
-        consult.setDate(consultDto.getDate());
-        consult.setDescription(consult.getDescription());
 
-        if (consultDto.getVeterinarianId() != null) {
-            Veterinarian veterinarian = veterinarianRepository.getById(consultDto.getVeterinarianId());
-            consult.setVeterinarian(veterinarian);
-        }
+    return consultDto;
 
-        if (consultDto.getPetId() != null) {
-            consult.setPet(petRepository.getById(consultDto.getPetId()));
-        }
-        return consult;
+  }
 
+  @Override
+  public Consult convertToEntity(ConsultDto consultDto) {
+    Consult consult = new Consult();
+    consult.setId(consultDto.getId());
+    consult.setDate(consultDto.getDate());
+    consult.setDescription(consultDto.getDescription());
+    consult.setPrice(consultDto.getPrice());
+
+    if (consultDto.getVeterinarianId() != null) {
+      Veterinarian veterinarian = veterinarianRepository.getById(consultDto.getVeterinarianId());
+      consult.setVeterinarian(veterinarian);
     }
+
+    if (consultDto.getPetId() != null) {
+      consult.setPet(petRepository.getById(consultDto.getPetId()));
+    }
+    return consult;
+
+  }
 }

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Client } from '../model/client';
 import { ClientService } from '../service/client.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ConnectableObservable } from 'rxjs';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class ClientListComponent implements OnInit, OnChanges {
   private loadData() {
     this.clientService.findAll().subscribe(data => {
       this.clients = data;
+      console.log(data);
     });
   }
 

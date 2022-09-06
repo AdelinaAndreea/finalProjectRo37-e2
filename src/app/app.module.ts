@@ -12,6 +12,7 @@ import { PetDetailsComponent } from './pet-details/pet-details.component';
 import { PetCreateComponent } from './pet-create/pet-create.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import { ClientListComponent } from './client-list/client-list.component';
+import { ConsultListComponent } from './consult-list/consult-list.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
     {path: ':ownerId', component:PetListComponent}
   ]},
 {path:'clients',component:ClientListComponent},
-{path:'clients/details',component:ClientDetailsComponent}
+{path:'clients/details',component:ClientDetailsComponent},
+{path:'consults',component:ConsultListComponent}
 ];
 
 
@@ -33,7 +35,8 @@ const routes: Routes = [
     PetDetailsComponent,
     PetCreateComponent,
     ClientDetailsComponent,
-    ClientListComponent
+    ClientListComponent,
+    ConsultListComponent
   ],
   imports: [
     BrowserModule,

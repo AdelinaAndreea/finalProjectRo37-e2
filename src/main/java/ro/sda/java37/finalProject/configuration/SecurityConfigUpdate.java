@@ -42,13 +42,7 @@ public class SecurityConfigUpdate {
       .password("Secret_123")
       .roles("ADMIN")
       .build();
-    UserDetails user = User.withDefaultPasswordEncoder()
-      .username("user")
-      .password("Secret_123")
-      .authorities("ROLE_USER")
-      .build();
-
-    return new InMemoryUserDetailsManager(admin, user);
+    return new InMemoryUserDetailsManager(admin);
   }
 
   @Bean

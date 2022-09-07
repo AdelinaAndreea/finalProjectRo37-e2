@@ -13,6 +13,7 @@ import { PetCreateComponent } from './pet-create/pet-create.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ConsultListComponent } from './consult-list/consult-list.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   ]},
 {path:'clients',component:ClientListComponent},
 {path:'clients/details',component:ClientDetailsComponent},
-{path:'consults',component:ConsultListComponent}
+{path:'consults',component:ConsultListComponent},
+{path:'login',component:LoginComponent}
 ];
 
 
@@ -36,7 +38,8 @@ const routes: Routes = [
     PetCreateComponent,
     ClientDetailsComponent,
     ClientListComponent,
-    ConsultListComponent
+    ConsultListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

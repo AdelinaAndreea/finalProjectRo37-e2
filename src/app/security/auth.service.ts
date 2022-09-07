@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Token } from '@angular/compiler';
+import { Token } from '../model/token';
+
 const AUTH_API = 'http://localhost:8880/api/auth/';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  
   public checkIsLoggedIn$: Observable<boolean>;
   private _checkIsLoggedIn = new BehaviorSubject<any>(null);
-  private token?:Token;
+  private tokenDto?:Token;
 
   constructor(private http: HttpClient) {
     this.checkIsLoggedIn$ = this._checkIsLoggedIn.asObservable();
@@ -36,7 +38,16 @@ export class AuthService {
   }
 
   public setToken(token:Token){
-    this.token=token;
+    this.tokenDto=token;
   }
+
+  public getToken(): string{
+    if(!!this.tokenDto?.token){
+      return this.tokenDto.token;
+    } else {
+      return "";
+    }
+  
+}
   
 }

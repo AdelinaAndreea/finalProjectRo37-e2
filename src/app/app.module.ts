@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { FormBuilder, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import { ClientListComponent } from './client-list/client-list.component';
 import { ConsultListComponent } from './consult-list/consult-list.component';
 import { LoginComponent } from './login/login.component';
+import { RequestInterceptor } from './security/request-interceptor';
 
 
 const routes: Routes = [
@@ -50,7 +51,14 @@ const routes: Routes = [
     ReactiveFormsModule
   ],
   exports: [RouterModule],
-  providers: [FormBuilder],
+  providers: [
+    FormBuilder,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

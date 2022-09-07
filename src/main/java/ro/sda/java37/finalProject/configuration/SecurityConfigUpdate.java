@@ -14,6 +14,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
+import static ro.sda.java37.finalProject.configuration.RequestInterceptor.APP_TOKEN_KEY;
+
 @Configuration
 public class SecurityConfigUpdate {
   @Bean
@@ -50,7 +52,7 @@ public class SecurityConfigUpdate {
     CorsConfiguration configuration = new CorsConfiguration();
     configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
     configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-    configuration.setAllowedHeaders(Arrays.asList("content-type"));
+    configuration.setAllowedHeaders(Arrays.asList("content-type", APP_TOKEN_KEY));
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", configuration);
     return source;

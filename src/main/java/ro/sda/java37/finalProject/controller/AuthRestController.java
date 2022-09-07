@@ -12,6 +12,7 @@ import ro.sda.java37.finalProject.dto.TokenDto;
 @RestController
 @RequestMapping(value = "/api/auth", produces = "application/json")
 public class AuthRestController {
+  public final static String APP_TOKEN = "my token";
 
   @Autowired
   public InMemoryUserDetailsManager inMemoryUserDetailsManager;
@@ -19,7 +20,7 @@ public class AuthRestController {
   @PostMapping("/signin")
   public TokenDto login(@RequestBody LoginDto loginDto) {
     return TokenDto.builder()
-      .token("my token")
+      .token(APP_TOKEN)
       .build();
   }
 

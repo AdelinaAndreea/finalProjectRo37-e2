@@ -19,14 +19,13 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 
 
-// import { PetCreateComponent } from './pet-create/pet-create.component';
-// import { ClientDetailsComponent } from './client-details/client-details.component';
-// import { ClientListComponent } from './client-list/client-list.component';
+
 
 
 const routes: Routes = [
 {path:'pets',component:PetListComponent},
 {path:'pets/details',component:PetDetailsComponent},
+{path:'add-new-pet',component:AddNewPetComponent},
 {path:'veterinarian',component:VeterinarianListComponent},
 {path:'veterinarian/details',component:VeterinarianDetailsComponent},
 {path:'add-new-veterinarian', component:AddNewVeterinarianComponent},
@@ -64,7 +63,7 @@ const routes: Routes = [
     ReactiveFormsModule,
   ],
   exports: [RouterModule],
-  providers: [FormBuilder, VeterinarianListComponent,PetListComponent,],
+  providers: [FormBuilder, VeterinarianListComponent,PetListComponent,AddNewPetComponent],
 
   bootstrap: [AppComponent]
 })

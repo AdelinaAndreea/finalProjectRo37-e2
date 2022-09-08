@@ -1,7 +1,12 @@
 <div class="container buttom">
-    <h2>New Pet! </h2>
+    <h2>WELCOME!Add a New Pet! </h2>
+    <p class="lead">Welcome! Here we can add a new pet. </p>
       <hr>
       <form [formGroup]="myGroup" >
+        <div class="mb-3">
+          <label for="name" class="form-label">Name Owner</label>
+          <input type="string" class="form-control" formControlName="formOwner" >
+        </div>
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
           <input type="string" class="form-control" formControlName="formPetName" >
@@ -10,10 +15,10 @@
           <label for="race" class="form-label">Race</label>
           <input type="string" class="form-control" formControlName="formRace" >
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="dateOfBirth" class="form-label">Date of birth</label>
             <input type="date" class="form-control" formControlName="formDateOfBirth" >
-        </div>
+        </div> -->
         <div class="mb-3">
             <label for="kilos" class="form-label">Kilos</label>
             <input type="string" class="form-control" formControlName="formKilos" >
@@ -24,5 +29,7 @@
         </div>
         <button type="submit" class="btn btn-primary" (click)="createPet()">Save</button>
       </form>
-
+      <ul></ul><ul></ul><ul></ul>
+      <div> <img src="../assets/download.jpg" style="width: 450px"></div>
+     <div> <button class="btn btn-primary hBack" routerLink="/home" type="button">Back</button></div> 
   </div>

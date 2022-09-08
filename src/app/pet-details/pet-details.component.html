@@ -45,8 +45,13 @@
             <label for="isVaccinated" class="form-label">Vaccinated</label>
             <input type="string" class="form-control" formControlName="formVaccinated">
         </div>
+        <div class="mb-3">
+        <label for="name" class="form-label">Name Owner</label>
+          <input type="string" class="form-control" formControlName="formOwner" >
+        </div>
         <button type="submit" class="btn btn-primary" (click)="updatePet()">Submit</button>
       </form>
     </div>
     </div>
-    <div> <button class="btn btn-primary hBack"  href=" "type="button">Back</button></div>
+    <div> <img src="../assets/catei.jpg" style="width: 250px"></div>
+    <div> <button class="btn btn-primary hBack" routerLink="/home" type="button">Back</button></div> 

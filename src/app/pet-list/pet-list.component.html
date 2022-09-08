@@ -1,15 +1,24 @@
+<div><button class="btn btn-primary hBack" routerLink="/home" type="button">Back</button></div>
+<img src="../assets/medic.jpg" style="width: 180px">
+----
+<img src="../assets/catei.jpg" class="center"style="width: 200px">
+
 <div class="card my-5">
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Name</th>
+          <th scope="col">Race</th>
+          <th scope="col">Kilos</th>
           <th scope="col">Owner</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let pet of pets">
           <td>{{ pet.name }}</td>
+          <td>{{pet.race}}</td>
+          <td>{{ pet.kilos }}</td>
           <td>{{pet.owner?.firstName}}</td>
           <td>
               <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button>
@@ -21,5 +30,5 @@
     </table>
 
   </div>
-  <div> <button class="btn btn-primary hBack"  href=" "type="button">Back</button></div>
+  <!-- <div> <button class="btn btn-primary hBack"  href=" "type="button">Back</button></div> -->
 </div>

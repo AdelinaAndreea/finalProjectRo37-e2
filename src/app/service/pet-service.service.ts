@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import {Pet} from '../model/pet'
 import { Observable } from 'rxjs/internal/Observable';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class PetServiceService {
   addAll(){
     throw new Error('Method not implemented.');
   }
-  createPet(pet: Pet) {
+  addPet(pet: Pet) {
     throw new Error('Method not implemented.');
   }
   private readonly petUrl : string;
@@ -26,7 +27,7 @@ export class PetServiceService {
     console.log("this.updatePetById")
     return this.http.put<Pet>(this.petUrl,pet);
   }
-  public addPet(pet:Pet){
+  public createPet(pet:Pet){
     return this.http.post<Pet>(this.petUrl,pet);
   }
 }

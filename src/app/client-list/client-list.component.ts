@@ -15,6 +15,8 @@ export class ClientListComponent implements OnInit, OnChanges {
   clients!:Client[];
   public myGroup!:FormGroup;
   public isAddClientFormVisible:boolean=false;
+ 
+ 
   
 
   constructor(private clientService : ClientService,private router:Router,private formBuilder:FormBuilder) { }

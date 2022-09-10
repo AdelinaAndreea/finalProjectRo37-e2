@@ -5,6 +5,7 @@
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Owner</th>
+            <th scope="col">Actions</th>
     
           </tr>
         </thead>
@@ -15,12 +16,15 @@
         
             <td>{{pet.owner?.firstName}}</td>
             <td>
-               <!-- <a class="btn btn-success" href="#">Edit</a>--> 
+            
           
             
+              
+                <button type="button" class="btn btn-info" (click)="viewDetails(pet)">Details</button> 
+             
+                <button type="button" class="btn btn-primary" (click)="showConsultForm(pet)">New Consult</button>
+                
                 <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button>
-                <button type="button" class="btn btn-danger" (click)="viewDetails(pet)">Details</button>
-                <button type="button" class="btn btn-danger" (click)="showConsultForm(pet)">New Consult</button>
             </td>
             
           </tr>

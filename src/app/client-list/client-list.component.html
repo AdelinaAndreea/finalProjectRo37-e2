@@ -10,6 +10,7 @@
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone number</th>
+            <th scope="col">Actions</th>
     
           </tr>
         </thead>
@@ -23,16 +24,17 @@
     
         
            
-            <td>
-                <button type="button" class="btn btn-danger" (click)="deleteClient(client.id)">Delete</button>
-                
-              </td>
-              <td>  <button type="button" class="btn btn-danger" (click)="onEdit(client)">Edit</button></td>
-              <td>  <button type="button" class="btn btn-danger" (click)="onViewPets(client.id)">View Pets</button></td>
+            <td> 
+            
+              <button type="button" class="btn btn-info" (click)="onViewPets(client.id)">View Pets</button>
+              <button type="button" class="btn btn-primary" (click)="onEdit(client)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteClient(client.id)">Delete</button>
+              
+            </td>
           </tr>
         </tbody>
       </table>
-      <button type="button" class="btn btn-danger" (click)="addClient()">Add Client</button>
+      <button type="button" class="btn btn-primary" (click)="addClient()">Add Client</button>
       <div class="container" *ngIf ="isAddClientFormVisible"> 
         <h2>Client details</h2>
        
@@ -60,5 +62,5 @@
        </div>
     
     </div>
-
+   
   </div>

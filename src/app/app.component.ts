@@ -11,6 +11,8 @@ export class AppComponent {
   title = 'Pet Clinic(nota 10!)';
   data = {}  as any;
   public isLogged:boolean=false;
+  imagePath="../assets/animals.jpg";
+  
   constructor(private http: HttpClient, private authService:AuthService) {
     // http.get('resource').subscribe(data => this.data = data);
   }

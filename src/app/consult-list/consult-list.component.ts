@@ -8,14 +8,15 @@ import { ConsultService } from '../service/consult.service';
   templateUrl: './consult-list.component.html',
   styleUrls: ['./consult-list.component.css']
 })
+
 export class ConsultListComponent implements OnInit {
-consults!:Consult[];
-  constructor(private consultSerice:ConsultService,private router:Router) { }
- 
+  consults!: Consult[];
+  constructor(private consultSerice: ConsultService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadData();
   }
+
   private loadData() {
     this.consultSerice.findAll().subscribe(data => {
       this.consults = data;

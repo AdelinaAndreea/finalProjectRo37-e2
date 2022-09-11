@@ -18,18 +18,19 @@ import { RequestInterceptor } from './security/request-interceptor';
 
 
 const routes: Routes = [
-  {path: 'pets',
-  children: [
-    {path: '', component:PetListComponent}, 
-    {path:'details',component:PetDetailsComponent},
-    {path: ':ownerId', component:PetListComponent}
-  ]},
-{path:'clients',component:ClientListComponent},
-{path:'clients/details',component:ClientDetailsComponent},
-{path:'consults',component:ConsultListComponent},
-{path:'login',component:LoginComponent}
+  {
+    path: 'pets',
+    children: [
+      { path: '', component: PetListComponent },
+      { path: 'details', component: PetDetailsComponent },
+      { path: ':ownerId', component: PetListComponent }
+    ]
+  },
+  { path: 'clients', component: ClientListComponent },
+  { path: 'clients/details', component: ClientDetailsComponent },
+  { path: 'consults', component: ConsultListComponent },
+  { path: 'login', component: LoginComponent }
 ];
-
 
 @NgModule({
   declarations: [

@@ -9,17 +9,18 @@ import { AuthService } from './security/auth.service';
 })
 export class AppComponent {
   title = 'Pet Clinic(nota 10!)';
-  data = {}  as any;
-  public isLogged:boolean=false;
-  imagePath="../assets/animals.jpg";
-  
-  constructor(private http: HttpClient, private authService:AuthService) {
+  data = {} as any;
+  public isLogged: boolean = false;
+  imagePath = "../assets/animals.jpg";
+
+  constructor(private http: HttpClient, private authService: AuthService) {
     // http.get('resource').subscribe(data => this.data = data);
   }
 
-  public ngOnInit():void{
-    this.isLogged=false;
+  public ngOnInit(): void {
+    this.isLogged = false;
     this.authService.checkIsLoggedIn$.subscribe((data) => {
-      this.isLogged = data;});
+      this.isLogged = data;
+    });
   }
 }

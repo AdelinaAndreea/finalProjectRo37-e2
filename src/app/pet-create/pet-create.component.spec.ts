@@ -8,9 +8,9 @@ describe('PetCreateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PetCreateComponent ]
+      declarations: [PetCreateComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

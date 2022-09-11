@@ -15,6 +15,7 @@ export class PetDetailsComponent implements OnInit{
    public pet!: Pet;
    public isVisible:boolean=false;
    public myGroup!:FormGroup;
+   
 
     constructor(private petService:PetServiceService, private route: ActivatedRoute, private router: Router, private formBuilder:FormBuilder){
         this.pet=this.router.getCurrentNavigation()?.extras.state?.['petJson'];

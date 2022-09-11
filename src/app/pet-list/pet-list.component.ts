@@ -24,6 +24,7 @@ public myGroup!:FormGroup;
 public myGroup2!:FormGroup;
 public isShowPetFormVisible:boolean=false;
 public selectedPetId?:number=-1;
+imagePath="../assets/img-pets.jpg";
 
 
 

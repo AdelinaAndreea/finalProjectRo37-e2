@@ -11,6 +11,7 @@ import { ConsultService } from '../service/consult.service';
 export class ConsultListComponent implements OnInit {
 consults!:Consult[];
   constructor(private consultSerice:ConsultService,private router:Router) { }
+ 
 
   ngOnInit(): void {
     this.loadData();
